@@ -41,7 +41,7 @@ if __name__=="__main__":
     parser.add_argument('-c', '--threads', type=int, required=True)
     parser.add_argument('-t', '--run_time', type=int, required=True)
     args = parser.parse_args(sys.argv[1:])
--r
+
   
 
     assert args.q <= 1
