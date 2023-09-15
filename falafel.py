@@ -13,7 +13,7 @@ def falafel(S,q):
     # initialize variables
     R = np.empty(m,dtype=object)
     for j in range(m): 
-        R [j]= model.addVar(vtype=gp.GRB.BIINARY)
+        R [j]= model.addVar(vtype=gp.GRB.BINARY)
 
     # set constraints
 
@@ -41,7 +41,7 @@ if __name__=="__main__":
     parser.add_argument('-c', '--threads', type=int, required=True)
     parser.add_argument('-t', '--run_time', type=int, required=True)
     args = parser.parse_args(sys.argv[1:])
-
+-r
   
 
     assert args.q <= 1
