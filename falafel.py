@@ -47,7 +47,8 @@ if __name__=="__main__":
 
     assert args.q <= 1
 
-    S = np.load(args.input, allow_pickle=True)['m']
+    S = np.load(args.input_binary, allow_pickle=True)['m']
+    _S = np.load(args.input_fraction, allow_pickle=True)['m']
 
    # run falafel
     R_chosen = falafel(S,args.q)
