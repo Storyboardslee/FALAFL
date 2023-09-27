@@ -23,7 +23,7 @@ def falafel(_S,S,q):
       
 
     # set objective
-    model.setObjective(gp.quicksum(R[j]* _S[i,j] for j in range(m) for i in n), gp.GRB.MAXIMIZE)
+    model.setObjective(gp.quicksum(R[j]* _S[i,j] for j in range(m) for i in range(n)), gp.GRB.MAXIMIZE)
 
     model.optimize()
 
