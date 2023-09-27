@@ -2,7 +2,7 @@ import gurobipy as gp, numpy as np, math
 import sys, os, argparse
 
 
-def falafel(S,q):
+def falafel(_S,S,q):
     n,m = S.shape
     
 
