@@ -35,7 +35,8 @@ def falafel(_S,S,q):
 if __name__=="__main__":
     #parser
     parser = argparse.ArgumentParser()
-    parser.add_argument('-i', '--input', type=str, required=True)
+    parser.add_argument('-ib', '--input_binary', type=str, required=True)
+    parser.add_argument('-if', '--input_fraction', type=str, required=True)
     parser.add_argument('-o', '--output', type=str, required=True)
     parser.add_argument('-q', '--q', type=float, required=True)
     parser.add_argument('-c', '--threads', type=int, required=True)
