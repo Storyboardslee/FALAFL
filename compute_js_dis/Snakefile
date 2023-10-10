@@ -15,6 +15,7 @@ rule all:
 
 def get_js_input(ws):
     print(ws.patient)
+    print(PATIENTS)
     print( NWKDIR.format(ws.patient,ws.patient))
     print(OUTDIR+ws.patient+"/heuristically_called_statuses.npz")
     return OUTDIR+ws.patient+"/heuristically_called_statuses.npz"
