@@ -89,7 +89,7 @@ if __name__ == "__main__":
     tree = skbio.TreeNode.read(f_nwk)
     #msk = np.load(f_msk, allow_pickle=True)['mask']
     #mask = np.isinf(msk)
-    sts = np.load(f_sts, allow_pickle=True)['s'] # cell by site matrix
+    sts = np.load(f_sts, allow_pickle=True)['m'] # cell by site matrix
 
     ####
     #   1. compute persistence score for each remaining site at each internal node
