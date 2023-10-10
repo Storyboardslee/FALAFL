@@ -8,7 +8,7 @@ PATIENTS:
         t_opt: 8
     CRC02:
         t_opt: 26
-    CRC04:	
+    CRC04:
         t_opt: 17
     CRC10:
         t_opt: 4
