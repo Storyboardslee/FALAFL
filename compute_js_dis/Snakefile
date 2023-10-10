@@ -34,6 +34,7 @@ rule compute_js_dis:
     conda:
         "sgootr.yml"
     run:
-        shell("echo {input} {output}")
+        shell("echo {input}")
+        shell("echo {output}")
         #shell("python compute_js_dis.py {input} {output} {params.partition_validity_threshold} {params.minimum_subtree_size} {threads} {log}")
         
