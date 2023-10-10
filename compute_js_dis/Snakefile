@@ -32,8 +32,7 @@ rule compute_js_dis:
         OUTDIR+"{patient}/logs/compute_js_dis.log"
     conda:
         "sgootr.yml"
-    run:
-        shell("echo {input}")
-        shell("echo {output}")
-        #shell("python compute_js_dis.py {input} {output} {params.partition_validity_threshold} {params.minimum_subtree_size} {threads} {log}")
+    shell:
+        "python compute_js_dis.py {input} {output} {params.partition_validity_threshold} " \
+        "{params.minimum_subtree_size} {threads} {log}"
         
