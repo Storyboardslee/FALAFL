@@ -17,8 +17,8 @@ def get_js_input(ws):
     print(ws.patient)
     print( NWKDIR.format(ws.patient,ws.patient))
     print(OUTDIR+ws.patient+"/heuristically_called_statuses.npz")
-    return NWKDIR.format(ws.patient,ws.t_opt), \
-           OUTDIR+ws.patient+"/heuristically_called_statuses.npz"
+    # return NWKDIR.format(ws.patient,ws.t_opt), \
+    #        OUTDIR+ws.patient+"/heuristically_called_statuses.npz"
 
 
 rule compute_js_dis: 
