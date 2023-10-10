@@ -6,6 +6,7 @@ if config['OUTDIR'] == './':
 else:
     OUTDIR = config['OUTDIR']
 
+NWKDIR =  config['NWKDIR']
 
 rule all:
     input:
