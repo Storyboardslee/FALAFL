@@ -1,6 +1,6 @@
 OUTDIR: /home/lix32/met_data_all_patients/key_met/test/
 NWKDIR: /home/lix32/CDSLSahinalp/yuelin/{}_10pi/t{}/tree.nwk
-PARTITION_VALIDITY_THRESHOLD: .5
+PARTITION_VALIDITY_THRESHOLD: .001
 MINIMUM_SUBTREE_SIZE: .05
 
 PATIENTS:
