@@ -1,4 +1,3 @@
-INDIR: ./
 OUTDIR: ./
 NWKDIR: /home/lix32/CDSLSahinalp/yuelin/{}_10pi/t{}/tree.nwk
 PARTITION_VALIDITY_THRESHOLD: .5
