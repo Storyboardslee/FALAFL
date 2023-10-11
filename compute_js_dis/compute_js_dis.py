@@ -101,6 +101,11 @@ if __name__ == "__main__":
     internal_names, internal_leaves = zip(*[(n.name, n.subset()) for n in tree.non_tips() if \
                                             len(n.subset()) >= min_nodes and \
                                             len(n.subset()) <= max_nodes])
+    
+    f.write('[{}] Computing persistence scores for {} ' \
+            'remaining sites\n'.format(datetime.now(), sts.shape[1]))
+    f.write('[{}] internal nodes ' \
+            'remaining sites\n'.format(datetime.now(), sts.shape[1]))
     jobs = enumerate_jobs(internal_leaves, partition_validity_threshold)
     mps = allocate_shared_buffer(np.float64, (len(internal_leaves), sts.shape[1]))
     statuses = allocate_shared_buffer(sts.dtype, sts.shape)
