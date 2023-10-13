@@ -54,7 +54,7 @@ def main():
     _S = np.load(args.input_fraction, allow_pickle=True)['m']
 
    # run falafel
-    R_chosen = falafel(_S, S,args.q,args.c, args.t)
+    R_chosen = falafel(_S, S,args.q,args.threads, args.run_time)
     np.savez(args.output,  cols=R_chosen )
 
 
