@@ -6,13 +6,13 @@ import gurobipy as gp, numpy as np, math
 import sys, os, argparse
 
 
-def falafel(_S,S,q):
+def falafel(_S,S,q,c,t):
     n,m = S.shape
     
 
     model = gp.Model()
-    model.Params.Threads = args.threads
-    model.Params.TimeLimit = args.run_time
+    model.Params.Threads = c
+    model.Params.TimeLimit = t
 
     # initialize variables
     R = np.empty(m,dtype=object)
@@ -54,7 +54,7 @@ def main():
     _S = np.load(args.input_fraction, allow_pickle=True)['m']
 
    # run falafel
-    R_chosen = falafel(_S, S,args.q)
+    R_chosen = falafel(_S, S,args.q,args.c, args.t)
     np.savez(args.output,  cols=R_chosen )
 
 
