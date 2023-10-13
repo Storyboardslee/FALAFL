@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+
+
+
 import gurobipy as gp, numpy as np, math
 import sys, os, argparse
 
@@ -31,9 +35,7 @@ def falafel(_S,S,q):
 
 
 
-
-if __name__=="__main__":
-    #parser
+def get_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('-ib', '--input_binary', type=str, required=True)
     parser.add_argument('-if', '--input_fraction', type=str, required=True)
@@ -41,10 +43,11 @@ if __name__=="__main__":
     parser.add_argument('-q', '--q', type=float, required=True)
     parser.add_argument('-c', '--threads', type=int, required=True)
     parser.add_argument('-t', '--run_time', type=int, required=True)
-    args = parser.parse_args(sys.argv[1:])
-
+    
+    return parser
   
-
+def main():
+    args = get_parser().parse_args(sys.argv[1:])
     assert args.q <= 1
 
     S = np.load(args.input_binary, allow_pickle=True)['m']
@@ -53,3 +56,8 @@ if __name__=="__main__":
    # run falafel
     R_chosen = falafel(_S, S,args.q)
     np.savez(args.output,  cols=R_chosen )
+
+
+if __name__=="__main__":
+    #parser
+    main()
