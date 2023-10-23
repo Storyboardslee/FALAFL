@@ -1,9 +1,6 @@
 import random
 configfile: "config.yaml"
-if config['OUTDIR'] == './':
-    OUTDIR = ''
-else:
-    OUTDIR = config['OUTDIR']
+OUTDIR = config['OUTDIR'].format(config['p'],config['q'],config['k'],)
 INDIR = config['INDIR']
 
 
@@ -22,19 +19,26 @@ def gen_input_file_list(patient_list):
     return [INDIR.format(p) for p in patient_list]
 
 
-def preprocess_output(patient_list):
+def gen_preprocess_output(patient_list):
     output_frac = OUTDIR+"%s_input_frac.npz" % '_'.join(map(str, patient_list))
     output_bin = OUTDIR+"%s_input_bin.npz" % '_'.join(map(str, patient_list))
     
     return output_frac, output_bin
+
+def gen_falafl_output(patient_list):
+    return OUTDIR+"%s_falafl_output.npz" % '_'.join(map(str, patient_list))
+
+rule all: 
+    input:
+        gen_falafl_output(patient_list)
 
 rule process:
     input: 
         gen_input_file_list(patient_list)
 
     output:
-        frac = preprocess_output(patient_list)[0],
-        bin = preprocess_output(patient_list)[1]
+        frac = gen_preprocess_output(patient_list)[0],
+        bin = gen_preprocess_output(patient_list)[1]
         
     params:
         p = config['p'],
@@ -53,18 +57,21 @@ rule process:
 
 rule falafl:
     input:
-
+        frac = gen_preprocess_output(patient_list)[0],
+        bin = gen_preprocess_output(patient_list)[1]
     output:
+        gen_falafl_output(patient_list)
+
     params:
         q = config['q'],
         run_time = config['RUN_TIME']
     threads: 
         2
     shell:
-        "python falafl.py" \
-        "-ib " \
-        "-if " \
-        "-o " \
+        "python falafl.py " \
+        "-ib {input.bin} " \
+        "-if {input.frac} " \
+        "-o {output} " \
         "-q {params.q} " \
         "-c {threads}" \
         "-t {params.run_time}"

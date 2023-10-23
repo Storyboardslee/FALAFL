@@ -56,6 +56,8 @@ def main():
    # run falafel
     R_chosen = falafel(_S, S,args.q,args.threads, args.run_time)
     np.savez(args.output,  cols=R_chosen )
+    print(len(R_chosen))
+    print(len(S.shape[1]))
 
 
 if __name__=="__main__":
