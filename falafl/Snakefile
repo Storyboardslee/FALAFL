@@ -26,8 +26,8 @@ def gen_preprocess_output(patient_list):
     return output_frac, output_bin
 
 def gen_falafl_output(patient_list):
-    print( expand(OUTDIR+"%s_falafl_output.npz" % '_'.join(map(str, patient_list)),patient_list = config['PATIENT_LIST']))
-    return expand(OUTDIR+"%s_falafl_output.npz" % '_'.join(map(str, patient_list)),patient_list = config['PATIENT_LIST'])
+    print( expand(OUTDIR+"%s_falafl_output.npz" % '_'.join(map(str, patient_list.split(', '))),patient_list = config['PATIENT_LIST']))
+    return expand(OUTDIR+"%s_falafl_output.npz" % '_'.join(map(str, patient_list.split(', '))))),patient_list = config['PATIENT_LIST'])
 
 rule all: 
     input:
