@@ -46,7 +46,7 @@ def gen_preprocess_output(patient_list):
 
 def gen_falafl_output(patient_list):
     #print(PATIENT_LISTS)
-    return [OUTDIR+"%s_falafl_output.npz" % '_'.join(map(str, p_list)) for p_list in patient_list]
+    return OUTDIR+"%s_falafl_output.npz" % '_'.join(map(str, patient_list)) 
 
 
 #for i in range(REPEAT):
