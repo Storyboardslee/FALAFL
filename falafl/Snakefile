@@ -11,7 +11,7 @@ def gen_patient_list():
     left1,left2 = random.sample(config['PATIENTS']['LEFT'],2)
     right = random.choice(config['PATIENTS']['RIGHT'])
     rectum = random.choice(config['PATIENTS']['RECTUM'])
-    patient_list = [left1,left2, rectum, patient]
+    patient_list = [left1,left2, right, rectum]
 
     return patient_list
 
@@ -19,7 +19,7 @@ patient_list = gen_patient_list()
 
 def gen_input_file_list(patient_list):
 
-    return [INDIR.format(p) for p in patient_list]
+    return ' '.join([INDIR.format(p) for p in patient_list])
 
 
 def preprocess_output(patient_list):
