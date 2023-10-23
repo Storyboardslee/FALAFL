@@ -2,40 +2,60 @@ import random
 configfile: "config.yaml"
 
 
-rule all:
-    input:
-        expand(OUTDIR+"{patient}/js_dis.npz",  patient=PATIENTS )
 
-def get_js_input(ws):
-    return NWKDIR.format(ws.patient,config['PATIENTS'][ws.patient]['t_opt']), \
-           OUTDIR+ws.patient+"/heuristically_called_statuses.npz"
- 
+
+def preprocess_input():
+    left1,left2 = random.sample(config['PATIENTS']['LEFT'],2)
+    right = random.choice(config['PATIENTS']['RIGHT'])
+    rectum = random.choice(config['PATIENTS']['RECTUM'])
+    patient_list = [left1,left2, rectum, patient]
+
+    return patient_list
+
+def preprocess_output(input_list):
+    output_frac = "%s_input_frac.npz" % '_'.join(map(str, input_list))
+    output_bin = "%s_input_bin.npz" % '_'.join(map(str, input_list))
+    
+    return output_frac, output_bin
+
 rule process:
-    input:
+    input: 
+        expand(OUTDIR+config['input_path'].format(p),  patient=preprocess_input)
+
     output:
+        output_frac,output_bin = preprocess_output(preprocess_input)
+
     params:
         p = config['p']
         k = config['k']
     threads: 
         2
     shell:
+        "python preprocess.py " \
+        "-i {input} " \
+        "-of {output.frac} " \
+        "-ob {output.bin} " \
+        "-p {params.p} " \
+        "-k {params.k} "
 
-   
-rule falafl:
-    input:
-    output:
-    params:
-        q = config['q']
-        run_time = config['RUN_TIME']
-    threads: 
-        2
-    shell:
-        "python falafl.py" \
-        "-ib " \
-        "-if " \
-        "-o " \
-        "-q {params.q} " \
-        "-c {threads}" \
-        "-t {params.run_time}"
+
+
+# rule falafl:
+#     input:
+
+#     output:
+#     params:
+#         q = config['q']
+#         run_time = config['RUN_TIME']
+#     threads: 
+#         2
+#     shell:
+#         "python falafl.py" \
+#         "-ib " \
+#         "-if " \
+#         "-o " \
+#         "-q {params.q} " \
+#         "-c {threads}" \
+#         "-t {params.run_time}"
  
         
