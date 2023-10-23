@@ -15,7 +15,7 @@ def gen_patient_list():
 
 
 
-#patient_list=config['PATIENT_LIST']
+PATIENT_LISTS=list(config['PATIENT_LIST'])
 def gen_input_file_list(patient_list):
 
     return [INDIR.format(p) for p in patient_list]
@@ -29,11 +29,11 @@ def gen_preprocess_output(patient_list):
 
 def gen_falafl_output(patient_list):
 
-    return OUTDIR+"%s_falafl_output.npz" % '_'.join(map(str, patient_list))
+    return [OUTDIR+"%s_falafl_output.npz" % '_'.join(map(str, p_list.split(','))) for p_list in PATIENT_LISTS]
 
 
 #for i in range(REPEAT):
-patient_list = gen_patient_list()
+#patient_list = gen_patient_list()
 
 rule all: 
     input:
