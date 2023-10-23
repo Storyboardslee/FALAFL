@@ -15,6 +15,7 @@ def gen_patient_list():
 
     return patient_list
 
+patient_list = gen_patient_list()
 
 def gen_input_file_list(patient_list):
 
@@ -29,7 +30,7 @@ def preprocess_output(patient_list):
 
 rule process:
     input: 
-        gen_input_file_list(gen_patient_list)
+        gen_input_file_list(patient_list)
 
     output:
         output_frac,output_bin = preprocess_output(preprocess_input)
