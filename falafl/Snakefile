@@ -4,13 +4,13 @@ OUTDIR = config['OUTDIR'].format(config['p'],config['q'],config['k'],)
 INDIR = config['INDIR']
 
 
-def gen_patient_list():
-    left1,left2 = sorted(random.sample(config['PATIENTS']['LEFT'].split(' '),2))
-    right = random.choice(config['PATIENTS']['RIGHT'].split(' '))
-    rectum = random.choice(config['PATIENTS']['RECTUM'].split(' '))
-    patient_list = [left1,left2, right, rectum]
-    print(patient_list)
-    return patient_list
+# def gen_patient_list():
+#     left1,left2 = sorted(random.sample(config['PATIENTS']['LEFT'].split(' '),2))
+#     right = random.choice(config['PATIENTS']['RIGHT'].split(' '))
+#     rectum = random.choice(config['PATIENTS']['RECTUM'].split(' '))
+#     patient_list = [left1,left2, right, rectum]
+#     print(patient_list)
+#     return patient_list
 
 #patient_list = gen_patient_list()
 patient_list=config['PATIENT_LIST']
@@ -26,7 +26,7 @@ def gen_preprocess_output(patient_list):
     return output_frac, output_bin
 
 def gen_falafl_output(patient_list):
-    return OUTDIR+"%s_falafl_output.npz" % '_'.join(map(str, patient_list))
+    return [OUTDIR+"%s_falafl_output.npz" % '_'.join(map(str, patient_list)) for patient_list in config['PATIENT_LIST']]
 
 rule all: 
     input:
