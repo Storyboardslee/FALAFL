@@ -16,6 +16,7 @@ def gen_patient_list():
 
 
 PATIENT_LISTS=list(config['PATIENT_LIST'])
+patient_list = PATIENT_LISTS
 def gen_input_file_list(patient_list):
 
     return [INDIR.format(p) for p in patient_list]
