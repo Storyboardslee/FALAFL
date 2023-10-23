@@ -1,3 +1,4 @@
+import random
 configfile: "config.yaml"
 
 
@@ -5,7 +6,10 @@ rule all:
     input:
         expand(OUTDIR+"{patient}/js_dis.npz",  patient=PATIENTS )
 
-
+def get_js_input(ws):
+    return NWKDIR.format(ws.patient,config['PATIENTS'][ws.patient]['t_opt']), \
+           OUTDIR+ws.patient+"/heuristically_called_statuses.npz"
+ 
 rule process:
     input:
     output:
@@ -16,10 +20,7 @@ rule process:
         2
     shell:
 
-def get_js_input(ws):
-    return NWKDIR.format(ws.patient,config['PATIENTS'][ws.patient]['t_opt']), \
-           OUTDIR+ws.patient+"/heuristically_called_statuses.npz"
-    
+   
 rule falafl:
     input:
     output:
