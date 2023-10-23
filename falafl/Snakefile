@@ -49,12 +49,13 @@ def gen_falafl_output(patient_list):
     return OUTDIR+"%s_falafl_output.npz" % '_'.join(map(str, patient_list)) 
 
 
-for i in range(len(PATIENT_LISTS)):
-    patient_list = PATIENT_LISTS[i]
+#for i in range(len(PATIENT_LISTS)):
+i=1
+patient_list = PATIENT_LISTS[i]
 
 rule all: 
     input:
-        expand(gen_falafl_output(p_list),p_list=PATIENT_LISTS)
+        gen_falafl_output(patient_list)
 
 rule preprocess:
     input: 
