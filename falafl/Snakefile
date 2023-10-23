@@ -1,4 +1,7 @@
 import random
+from itertools import combinations
+import itertools
+
 configfile: "config.yaml"
 OUTDIR = config['OUTDIR'].format(config['p'],config['q'],config['k'],)
 INDIR = config['INDIR']
@@ -6,17 +9,28 @@ REPEAT = config['REPEAT']
 
 
 def gen_patient_list():
-    left1,left2 = sorted(random.sample(config['PATIENTS']['LEFT'].split(' '),2))
-    right = random.choice(config['PATIENTS']['RIGHT'].split(' '))
-    rectum = random.choice(config['PATIENTS']['RECTUM'].split(' '))
-    patient_list = [left1,left2, right, rectum]
-    print(patient_list)
-    return patient_list
+
+    # left1,left2 = sorted(random.sample(config['PATIENTS']['LEFT'].split(' '),2))
+    # right = random.choice(config['PATIENTS']['RIGHT'].split(' '))
+    # rectum = random.choice(config['PATIENTS']['RECTUM'].split(' '))
+    # patient_list = [left1,left2, right, rectum]
+    # print(patient_list)
+    # return patient_list
+    left = sorted(combinations(list(config['PATIENTS']['LEFT']),2))
+    right = list(config['PATIENTS']['RIGHT'])
+    rectum = list(config['PATIENTS']['RECTUM'])
+    all_combo = list(itertools.product(*[left,right,rectum]))
+    all_combo_clean  = [(p1,p2,p3,p4) for [(p1,p2),p3,p4] in all_combo]
+
+    return all_combo_clean
+
+PATIENT_LISTS = gen_patient_list()
 
 
 
-PATIENT_LISTS=list(config['PATIENT_LIST'])
-patient_list = PATIENT_LISTS
+
+#PATIENT_LISTS=list(config['PATIENT_LIST'])
+#patient_list = PATIENT_LISTS
 def gen_input_file_list(patient_list):
 
     return [INDIR.format(p) for p in patient_list]
@@ -29,46 +43,48 @@ def gen_preprocess_output(patient_list):
     return output_frac, output_bin
 
 def gen_falafl_output(patient_list):
-    print(PATIENT_LISTS)
-    return [OUTDIR+"%s_falafl_output.npz" % '_'.join(map(str, p_list.split(','))) for p_list in PATIENT_LISTS]
+    #print(PATIENT_LISTS)
+    return [OUTDIR+"%s_falafl_output.npz" % '_'.join(map(str, p_list)) for p_list in patient_list]
 
 
 #for i in range(REPEAT):
-#patient_list = gen_patient_list()
+patient_list = gen_patient_list()
 
 rule all: 
     input:
-        gen_falafl_output(patient_list)
+        expand(gen_falafl_output(patient_list),patient_list=PATIENT_LISTS)
 
-rule process:
-    input: 
-        gen_input_file_list(patient_list)
+# rule process:
+#     input: 
+#         expand(gen_input_file_list(patient_list),patient_list=PATIENT_LISTS)
 
-    output:
-        frac = gen_preprocess_output(patient_list)[0],
-        bin = gen_preprocess_output(patient_list)[1]
+#     output:
+#         frac = gen_preprocess_output(patient_list)[0],
+#         bin = gen_preprocess_output(patient_list)[1]
         
-    params:
-        p = config['p'],
-        k = config['k']
-    threads: 
-        2
-    shell:
-        "python preprocess.py " \
-        "-i {input} " \
-        "-of {output.frac} " \
-        "-ob {output.bin} " \
-        "-p {params.p} " \
-        "-k {params.k} "
+#     params:
+#         p = config['p'],
+#         k = config['k']
+#     threads: 
+#         2
+#     shell:
+#         "python preprocess.py " \
+#         "-i {input} " \
+#         "-of {output.frac} " \
+#         "-ob {output.bin} " \
+#         "-p {params.p} " \
+#         "-k {params.k} "
 
 
 
 rule falafl:
     input:
-        frac = gen_preprocess_output(patient_list)[0],
-        bin = gen_preprocess_output(patient_list)[1]
+        expand(gen_input_file_list(patient_list),patient_list=PATIENT_LISTS)
+        # frac = gen_preprocess_output(patient_list)[0],
+        # bin = gen_preprocess_output(patient_list)[1]
     output:
-        gen_falafl_output(patient_list)
+        #gen_falafl_output(patient_list)
+        expand(gen_falafl_output(patient_list),patient_list=PATIENT_LISTS)
 
     params:
         q = config['q'],

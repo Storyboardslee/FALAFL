@@ -7,20 +7,20 @@ INDIR: /home/lix32/met_data_all_patients/key_met/all_site_delta10/{}_delta_10_fr
 OUTDIR: /home/lix32/met_data_all_patients/key_met/test_falafl/p{}_q{}_k{}/
 
 PATIENT_LIST:
-    - CRC01, CRC10, CRC02, CRC12
-    - CRC10, CRC11, CRC04, CRC12
+    - ['CRC01', 'CRC10', 'CRC02', 'CRC12']
+    - ['CRC10', 'CRC11', 'CRC04', 'CRC12']
 
 
 PATIENTS:
     LEFT: 
-        CRC01
-        CRC10
-        CRC11
-        CRC13
+        - CRC01
+        - CRC10
+        - CRC11
+        - CRC13
     RIGHT:
-        CRC02
-        CRC04
-        CRC15
+        - CRC02
+        - CRC04
+        - CRC15
     RECTUM:
-        CRC12
-        CRC14
+        - CRC12
+        - CRC14
