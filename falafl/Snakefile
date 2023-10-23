@@ -6,7 +6,7 @@ configfile: "config.yaml"
 OUTDIR = config['OUTDIR'].format(config['p'],config['q'],config['k'],)
 INDIR = config['INDIR']
 REPEAT = config['REPEAT']
-
+i = config['i']
 
 def gen_patient_list():
 
@@ -17,9 +17,9 @@ def gen_patient_list():
     # print(patient_list)
     # return patient_list
     left = sorted(combinations(list(config['PATIENTS']['LEFT']),2))
-    right = list(config['PATIENTS']['RIGHT'])
-    rectum = list(config['PATIENTS']['RECTUM'])
-    all_combo = list(itertools.product(*[left,right,rectum]))
+    right = sorted(list(config['PATIENTS']['RIGHT']))
+    rectum = sorted(list(config['PATIENTS']['RECTUM']))
+    all_combo = sorted(list(itertools.product(*[left,right,rectum])))
     all_combo_clean  = [(p1,p2,p3,p4) for [(p1,p2),p3,p4] in all_combo]
 
     return all_combo_clean
@@ -27,11 +27,6 @@ def gen_patient_list():
 # all the possible combinations
 PATIENT_LISTS = gen_patient_list()
 
-
-patient_list=PATIENT_LISTS[0]
-
-#PATIENT_LISTS=list(config['PATIENT_LIST'])
-#patient_list = PATIENT_LISTS
 def gen_input_file_list(patient_list):
     print(patient_list)
 
@@ -49,8 +44,6 @@ def gen_falafl_output(patient_list):
     return OUTDIR+"%s_falafl_output.npz" % '_'.join(map(str, patient_list)) 
 
 
-#for i in range(len(PATIENT_LISTS)):
-i=1
 patient_list = PATIENT_LISTS[i]
 
 rule all: 
