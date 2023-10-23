@@ -31,7 +31,7 @@ def gen_falafl_output():
 
 rule all: 
     input:
-        gen_falafl_output(patient_list)
+        gen_falafl_output()
 
 rule process:
     input: 
@@ -61,7 +61,7 @@ rule falafl:
         frac = gen_preprocess_output(patient_list)[0],
         bin = gen_preprocess_output(patient_list)[1]
     output:
-        gen_falafl_output(patient_list)
+        gen_falafl_output()
 
     params:
         q = config['q'],
