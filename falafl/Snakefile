@@ -4,10 +4,10 @@ if config['OUTDIR'] == './':
     OUTDIR = ''
 else:
     OUTDIR = config['OUTDIR']
+INDIR = config['INDIR']
 
 
-
-def preprocess_input():
+def gen_patient_list():
     left1,left2 = random.sample(config['PATIENTS']['LEFT'],2)
     right = random.choice(config['PATIENTS']['RIGHT'])
     rectum = random.choice(config['PATIENTS']['RECTUM'])
@@ -15,15 +15,21 @@ def preprocess_input():
 
     return patient_list
 
-def preprocess_output(input_list):
-    output_frac = "%s_input_frac.npz" % '_'.join(map(str, input_list))
-    output_bin = "%s_input_bin.npz" % '_'.join(map(str, input_list))
+
+def gen_input_file_list(patient_list):
+
+    return [INDIR.format(p) for p in patient_list]
+
+
+def preprocess_output(patient_list):
+    output_frac = OUTDIR+"%s_input_frac.npz" % '_'.join(map(str, patient_list))
+    output_bin = OUTDIR+"%s_input_bin.npz" % '_'.join(map(str, patient_list))
     
     return output_frac, output_bin
 
 rule process:
     input: 
-        expand(OUTDIR+config['INDIR'],  patient=preprocess_input)
+        gen_input_file_list(gen_patient_list)
 
     output:
         output_frac,output_bin = preprocess_output(preprocess_input)
