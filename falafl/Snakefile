@@ -8,7 +8,7 @@ INDIR = config['INDIR']
 
 
 def gen_patient_list():
-    print(' '.split(config['PATIENTS']['LEFT']))
+    print(config['PATIENTS']['LEFT'].split(' '))
     left1,left2 = random.sample(' '.split(config['PATIENTS']['LEFT']),2)
     right = random.choice(' '.split(config['PATIENTS']['RIGHT']))
     rectum = random.choice(' '.split(config['PATIENTS']['RECTUM']))
