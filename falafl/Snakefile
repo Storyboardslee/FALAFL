@@ -33,7 +33,8 @@ rule process:
         gen_input_file_list(patient_list)
 
     output:
-        output_frac,output_bin = preprocess_output(patient_list)
+        output_frac = preprocess_output(patient_list)[0],
+        output_bin = preprocess_output(patient_list)[1]
 
     params:
         p = config['p'],
