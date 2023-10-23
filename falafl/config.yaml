@@ -2,7 +2,8 @@ RUN_TIME: 1000
 p: .5
 q: .75
 k: 2
-input_path: /home/lix32/met_data_all_patients/key_met/all_site_delta10/{}_delta_10_frac.txt
+INDIR: /home/lix32/met_data_all_patients/key_met/all_site_delta10/{}_delta_10_frac.txt
+OUTDIR: /home/lix32/met_data_all_patients/key_met/test_falafl/
 
 PATIENTS:
     LEFT: 

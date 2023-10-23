@@ -1,6 +1,9 @@
 import random
 configfile: "config.yaml"
-
+if config['OUTDIR'] == './':
+    OUTDIR = ''
+else:
+    OUTDIR = config['OUTDIR']
 
 
 
