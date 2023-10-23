@@ -23,7 +23,7 @@ def preprocess_output(input_list):
 
 rule process:
     input: 
-        expand(OUTDIR+config['INDIR'].format({patient}),  patient=preprocess_input)
+        expand(OUTDIR+config['INDIR']),  patient=preprocess_input)
 
     output:
         output_frac,output_bin = preprocess_output(preprocess_input)
