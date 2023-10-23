@@ -5,11 +5,11 @@ INDIR = config['INDIR']
 
 
 def gen_patient_list():
-    print(config['PATIENTS']['LEFT'].split(' '))
     left1,left2 = random.sample(config['PATIENTS']['LEFT'].split(' '),2)
     right = random.choice(config['PATIENTS']['RIGHT'].split(' '))
     rectum = random.choice(config['PATIENTS']['RECTUM'].split(' '))
     patient_list = [left1,left2, right, rectum]
+    print(patient_list)
     return patient_list
 
 patient_list = gen_patient_list()
