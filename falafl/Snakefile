@@ -55,7 +55,7 @@ rule falafl:
 
     output:
     params:
-        q = config['q']
+        q = config['q'],
         run_time = config['RUN_TIME']
     threads: 
         2
