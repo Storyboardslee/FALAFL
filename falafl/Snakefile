@@ -29,7 +29,7 @@ def gen_preprocess_output(patient_list):
     return output_frac, output_bin
 
 def gen_falafl_output(patient_list):
-
+    print(PATIENT_LISTS)
     return [OUTDIR+"%s_falafl_output.npz" % '_'.join(map(str, p_list.split(','))) for p_list in PATIENT_LISTS]
 
 
