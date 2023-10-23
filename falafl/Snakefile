@@ -67,7 +67,7 @@ rule falafl:
         frac = gen_preprocess_output(patient_list)[0],
         bin = gen_preprocess_output(patient_list)[1]
     output:
-        gen_falafl_output()
+        gen_falafl_output(patient_list)
 
     params:
         q = config['q'],
