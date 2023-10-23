@@ -1,0 +1,19 @@
+RUN_TIME: 1000
+p: .5
+q: .75
+k: 2
+
+
+PATIENTS:
+    LEFT: 
+        CRC01
+        CRC10
+        CRC11
+        CRC13
+    RIGHT:
+        CRC02
+        CRC04
+        CRC15
+    RECTUM:
+        CRC12
+        CRC14
