@@ -52,52 +52,52 @@ def gen_falafl_output(patient_list):
 for i in range(len(PATIENT_LISTS)):
     patient_list = PATIENT_LISTS[i]
 
-    rule all: 
-        input:
-            gen_falafl_output(patient_list)
+rule all: 
+    input:
+        expand(gen_falafl_output(p_list),p_list=PATIENT_LISTS)
 
-    rule preprocess:
-        input: 
-            gen_input_file_list(patient_list)
+rule preprocess:
+    input: 
+        gen_input_file_list(patient_list)
 
-        output:
-            frac = gen_preprocess_output(patient_list)[0],
-            bin = gen_preprocess_output(patient_list)[1]
-            
-        params:
-            p = config['p'],
-            k = config['k']
-        threads: 
-            2
-        shell:
-            "python preprocess.py " \
-            "-i {input} " \
-            "-of {output.frac} " \
-            "-ob {output.bin} " \
-            "-p {params.p} " \
-            "-k {params.k} "
-
-
-
-    rule falafl:
-        input:
-            frac = gen_preprocess_output(patient_list)[0],
-            bin = gen_preprocess_output(patient_list)[1]
-        output:
-            gen_falafl_output(patient_list)
+    output:
+        frac = gen_preprocess_output(patient_list)[0],
+        bin = gen_preprocess_output(patient_list)[1]
         
-        params:
-            q = config['q'],
-            run_time = config['RUN_TIME']
-        threads: 
-            2
-        shell:
-            "python falafl.py " \
-            "-ib {input.bin} " \
-            "-if {input.frac} " \
-            "-o {output} " \
-            "-q {params.q} " \
-            "-c {threads} " \
-            "-t {params.run_time}"
+    params:
+        p = config['p'],
+        k = config['k']
+    threads: 
+        2
+    shell:
+        "python preprocess.py " \
+        "-i {input} " \
+        "-of {output.frac} " \
+        "-ob {output.bin} " \
+        "-p {params.p} " \
+        "-k {params.k} "
+
+
+
+rule falafl:
+    input:
+        frac = gen_preprocess_output(patient_list)[0],
+        bin = gen_preprocess_output(patient_list)[1]
+    output:
+        gen_falafl_output(patient_list)
     
-            
+    params:
+        q = config['q'],
+        run_time = config['RUN_TIME']
+    threads: 
+        2
+    shell:
+        "python falafl.py " \
+        "-ib {input.bin} " \
+        "-if {input.frac} " \
+        "-o {output} " \
+        "-q {params.q} " \
+        "-c {threads} " \
+        "-t {params.run_time}"
+ 
+        
