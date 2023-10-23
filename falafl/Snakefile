@@ -29,7 +29,7 @@ rule process:
         output_frac,output_bin = preprocess_output(preprocess_input)
 
     params:
-        p = config['p']
+        p = config['p'],
         k = config['k']
     threads: 
         2
