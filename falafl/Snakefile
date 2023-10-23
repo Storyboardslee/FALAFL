@@ -12,7 +12,7 @@ def gen_patient_list():
     right = random.choice(config['PATIENTS']['RIGHT'])
     rectum = random.choice(config['PATIENTS']['RECTUM'])
     patient_list = [left1,left2, right, rectum]
-
+    print(patient_list)
     return patient_list
 
 patient_list = gen_patient_list()
