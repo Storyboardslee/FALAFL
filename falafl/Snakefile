@@ -73,7 +73,7 @@ rule falafl:
         "-if {input.frac} " \
         "-o {output} " \
         "-q {params.q} " \
-        "-c {threads}" \
+        "-c {threads} " \
         "-t {params.run_time}"
  
         

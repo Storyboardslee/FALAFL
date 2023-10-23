@@ -1,4 +1,4 @@
-RUN_TIME: 1000
+RUN_TIME: 10000
 p: .5
 q: .75
 k: 2
