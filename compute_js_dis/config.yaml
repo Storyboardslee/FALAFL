@@ -1,4 +1,5 @@
-OUTDIR: ./
+INDIR: /home/lix32/met_data_all_patients/key_met/{}/heuristic_met_rate/all_sites_delta10/
+OUTDIR: /home/lix32/met_data_all_patients/key_met/all_site_js/
 NWKDIR: /home/lix32/CDSLSahinalp/yuelin/{}_10pi/t{}/tree.nwk
 PARTITION_VALIDITY_THRESHOLD: 0.5
 MINIMUM_SUBTREE_SIZE: .05

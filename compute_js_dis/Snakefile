@@ -1,4 +1,4 @@
-configfile: "config_test.yaml"
+configfile: "config.yaml"
 
 PATIENTS=list(config['PATIENTS'].keys())
 if config['OUTDIR'] == './':
@@ -7,22 +7,23 @@ else:
     OUTDIR = config['OUTDIR']
 
 NWKDIR = config['NWKDIR']
+INDIR = config['INDIR']
 
 rule all:
     input:
-        expand(OUTDIR+"{patient}/js_dis.npz",  patient=PATIENTS )
+        expand(OUTDIR+"{patient}/all_sites_delta10_js/js_dis.npz",  patient=PATIENTS )
 
 
 def get_js_input(ws):
     return NWKDIR.format(ws.patient,config['PATIENTS'][ws.patient]['t_opt']), \
-           OUTDIR+ws.patient+"/heuristically_called_statuses.npz"
+           INDIR.format(ws.patient)+"{}_cpg_met_rate_mat.npz".format(ws.patient)
     
 
 rule compute_js_dis: 
     input:
         get_js_input
     output:
-        OUTDIR+"{patient}/js_dis.npz"
+        OUTDIR+"{patient}/all_sites_delta10_js/js_dis.npz"
     params:
         partition_validity_threshold = config['PARTITION_VALIDITY_THRESHOLD'],
         minimum_subtree_size = config['MINIMUM_SUBTREE_SIZE']
