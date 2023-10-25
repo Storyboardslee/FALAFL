@@ -41,7 +41,6 @@ rule compute_js_dis:
         get_js_input
     output:
         expand(OUTDIR+"{patient}/js_dis.npz",  patient=PATIENTS )
-        #OUTDIR+"{patient}/all_sites_delta10_js/js_dis.npz"
     params:
         partition_validity_threshold = config['PARTITION_VALIDITY_THRESHOLD'],
         minimum_subtree_size = config['MINIMUM_SUBTREE_SIZE']
