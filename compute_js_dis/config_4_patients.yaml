@@ -1,5 +1,5 @@
 INDIR: /home/lix32/met_data_all_patients/key_met/falafl_4_patient_sites/CRC01_CRC10_CRC02_CRC12/{}/
-OUTDIR: /home/lix32/met_data_all_patients/key_met/falafl_4_patient_sites/CRC01_CRC10_CRC02_CRC12/{}/
+OUTDIR: /home/lix32/met_data_all_patients/key_met/falafl_4_patient_sites/CRC01_CRC10_CRC02_CRC12/
 NWKDIR: /home/lix32/CDSLSahinalp/yuelin/{}_10pi/t{}/tree.nwk
 PARTITION_VALIDITY_THRESHOLD: 0.5
 MINIMUM_SUBTREE_SIZE: .05
