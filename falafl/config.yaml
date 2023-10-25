@@ -6,10 +6,6 @@ k: 2
 INDIR: /home/lix32/met_data_all_patients/key_met/all_site_delta10/{}_delta_10_frac.txt
 OUTDIR: /home/lix32/met_data_all_patients/key_met/test_falafl/p{}_q{}_k{}/
 
-PATIENT_LIST:
-    - ['CRC01', 'CRC10', 'CRC02', 'CRC12']
-    - ['CRC10', 'CRC11', 'CRC04', 'CRC12']
-
 
 PATIENTS:
     LEFT: 

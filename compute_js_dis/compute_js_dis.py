@@ -94,6 +94,10 @@ if __name__ == "__main__":
     #mask = np.isinf(msk)
     sts = np.load(f_sts, allow_pickle=True)['m'] # cell by site matrix
 
+    # turn matrix into 0 0.5 1
+    sts[(sts>0) &(sts <1)] = 0.5  
+
+
     ####
     #   1. compute persistence score for each remaining site at each internal node
     ####     
