@@ -2,21 +2,18 @@ REPEAT: 3
 RUN_TIME: 10000
 p: .5
 q: .75
-k: 2
+k: 5
 INDIR: /home/lix32/met_data_all_patients/key_met/all_site_delta10/{}_delta_10_frac.txt
-OUTDIR: /home/lix32/met_data_all_patients/key_met/test_falafl/p{}_q{}_k{}/
+OUTDIR: /home/lix32/met_data_all_patients/key_met/all_site_delta10_falalfl_output/p{}_q{}_k{}/
 
 
 PATIENTS:
-    LEFT: 
-        - CRC01
-        - CRC10
-        - CRC11
-        - CRC13
-    RIGHT:
-        - CRC02
-        - CRC04
-        - CRC15
-    RECTUM:
-        - CRC12
-        - CRC14
+    - CRC01
+    - CRC10
+    - CRC11
+    - CRC13
+    - CRC02
+    - CRC04
+    - CRC15
+    - CRC12
+    - CRC14
