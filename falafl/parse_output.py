@@ -14,7 +14,8 @@ def get_parser():
 def main():
 
     args = get_parser().parse_args(sys.argv[1:])
-    falafl_sites_idx = np.load(args.input_falafl_sites,allow_pickle=True)['cols']
+    falafl_sites_idx = np.load(args.input_falafl_sites,allow_pickle=True)
+    print(falafl_sites_idx.files)
     all_sites = np.load(args.input_all_sites,allow_pickle=True)['cols']
     
     falafl_sites = all_sites[falafl_sites_idx]
