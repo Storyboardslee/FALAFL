@@ -22,7 +22,7 @@ def main():
     
     falafl_sites = all_sites[falafl_sites_idx]
 
-    with open(args.output) as f: 
+    with open(args.output,'w') as f: 
         for s in falafl_sites:
             f.write("{}\n".format(s))
 
