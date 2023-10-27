@@ -5,7 +5,7 @@ import sys, os, argparse
 def get_parser():
     parser = argparse.ArgumentParser()
     #input & output
-    parser.add_argument('-if', '--input_falafl_sites', type=str, nargs='+',required=True)
+    parser.add_argument('-if', '--input_falafl_sites', type=str, required=True)
     parser.add_argument('-is', '--input_all_sites', type=str, required=True)
     parser.add_argument('-o', '--output', type=str, required=True)
 
