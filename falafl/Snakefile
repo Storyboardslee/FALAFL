@@ -53,7 +53,24 @@ def gen_falafl_output(patient_list):
 
 rule all: 
     input:
-        gen_falafl_output(patient_list)
+        OUTDIR+"%s_.txt" % '_'.join(map(str, patient_list)) 
+
+
+rule parse_output:
+    input:
+        falafl_output=gen_falafl_output(patient_list),
+        all_sites=gen_preprocess_output(patient_list)[0]
+    output:
+        OUTDIR+"%s_.txt" % '_'.join(map(str, patient_list)) 
+
+    shell:
+        "python parse_output.py " \
+        "-if {input.falafl_output} " \
+        "-is {input.all_sites} " \
+        "-of {output}"
+
+
+        
 
 rule preprocess:
     input: 
