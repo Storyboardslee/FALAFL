@@ -95,6 +95,7 @@ def process_data(df,p,k):
     select_col_check = np.where(col_sum>=k)[0]
 
     print(_m.shape, len(select_col_check))
+    assert _m.shape[1] == len(select_col_check)
 
 
     df_bin = pd.DataFrame(_m,columns = sites, index = df.index)
