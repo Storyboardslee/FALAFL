@@ -68,10 +68,10 @@ def process_data(df,p,k):
     # very hacky implementation right now needs update later
     left = m[0:4,:]
     left_p = patients[0:4]
-    right = m[4:6,:]
-    right_p = patients[4:6]
-    rectum = m[6:,:]
-    rectum_p = patients[6:]
+    right = m[4:7,:]
+    right_p = patients[4:7]
+    rectum = m[7:,:]
+    rectum_p = patients[7:]
     print(left_p,right_p,rectum_p)
 
     select_col_ls=[]
