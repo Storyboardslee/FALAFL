@@ -56,18 +56,54 @@ def process_data(df,p,k):
     m = df.values
     m[m< p]  = 0
     m[m>=p] = 1
-    col_sum = np.sum(m,axis=0)
-    select_col = np.where(col_sum>=k)[0]
-
-    print(p,k,len(select_col))
-
-    _m = m[:,select_col]
-
-    print(_m.shape)
-    sites = df.columns[select_col]
+    
     patients = df.index
 
+
+    print(patients)
+    # col_sum = np.sum(m,axis=0)
+    # select_col = np.where(col_sum>=k)[0]
+
+    # add new constraints that we need at least 2 from left,1 from right, and 1 from rectum
+    # very hacky implementation right now needs update later
+    left = m[0:4,:]
+    left_p = patients[0:4]
+    right = m[4:7,:]
+    right_p = patients[4:7]
+    rectum = m[7:,:]
+    rectum_p = patients[7:]
+    print(left_p,right_p,rectum_p)
+
+    select_col_ls=[]
+
+    for subtype,k_ in [(left,2),(right,1),(rectum,1)]:
+        col_sum = np.sum(subtype,axis=0)
+        select = set(np.where(col_sum>=k_)[0])
+        select_col_ls.append(select)
+
+    select_col = sorted(set.intersection(*select_col_ls))
+
+
+        
+
+
+    _m = m[:,select_col]
+    sites = df.columns[select_col]
+
+
+    col_sum = np.sum(_m,axis=0)
+    select_col_check = np.where(col_sum>=k)[0]
+
+    print(_m.shape, len(select_col_check))
+    assert _m.shape[1] == len(select_col_check)
+
+
+    print(_m.shape)
+
+
     df_bin = pd.DataFrame(_m,columns = sites, index = df.index)
+
+
 
     m_frac= df.values
     m_frac_clean = m_frac[:,select_col]
