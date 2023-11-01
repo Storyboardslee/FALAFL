@@ -8,7 +8,7 @@ rm -f temp/snakemake.cmd
 
 for k in 4 5 
 do
-    echo "sh snakemake.sh $1 " >> temp/snakemake.cmd
+    echo "sh snakemake.sh $k " >> temp/snakemake.cmd
 
 done
 
