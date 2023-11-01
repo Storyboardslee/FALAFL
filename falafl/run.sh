@@ -7,8 +7,10 @@ mkdir -p log
 rm -f temp/snakemake.cmd
 
 for k in 4 5 
+do
     echo "sh snakemake.sh $1 " >> temp/snakemake.cmd
 
+done
 
 swarm \
     --file temp/snakemake.cmd \
