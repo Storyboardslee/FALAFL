@@ -98,6 +98,9 @@ def process_data(df,p,k):
     assert _m.shape[1] == len(select_col_check)
 
 
+    print(_m.shape)
+
+
     df_bin = pd.DataFrame(_m,columns = sites, index = df.index)
 
     return df_bin
