@@ -59,7 +59,11 @@ def process_data(df,p,k):
     col_sum = np.sum(m,axis=0)
     select_col = np.where(col_sum>=k)[0]
 
+    print(p,k,len(select_col))
+
     _m = m[:,select_col]
+
+    print(_m.shape)
     sites = df.columns[select_col]
     patients = df.index
 
