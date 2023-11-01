@@ -4,7 +4,7 @@ p: .5
 q: .75
 k: 4
 INDIR: /home/lix32/met_data_all_patients/key_met/all_site_delta10/{}_delta_10_frac.txt
-OUTDIR: /home/lix32/met_data_all_patients/key_met/all_site_delta10_falalfl_output/check/p{}_q{}_k{}_rerun/
+OUTDIR: /home/lix32/met_data_all_patients/key_met/all_site_delta10_falalfl_output/rerun/p{}_q{}_k{}/
 
 
 PATIENTS:

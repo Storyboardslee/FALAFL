@@ -69,17 +69,27 @@ def process_data(df,p,k):
 
     df_bin = pd.DataFrame(_m,columns = sites, index = df.index)
 
-    return df_bin
+    m_frac= df.values
+    m_frac_clean = m_frac[:,select_col]
+
+    df_frac_clean = pd.DataFrame(m_frac_clean,columns = sites, index = df.index)
+    return df_bin,df_frac_clean
 
 def main():
     args = get_parser().parse_args(sys.argv[1:])
     
     df_frac = concat_data(args.input)
-    np.savez(args.output_frac,m = df_frac.values, cols = df_frac.columns,rows = df_frac.index)
+
+    #np.savez(args.output_frac,m = df_frac.values, cols = df_frac.columns,rows = df_frac.index)
     
-    df_bin = process_data(df_frac, args.p, args.k)
+    df_bin,df_frac_clean = process_data(df_frac, args.p, args.k)
     np.savez(args.output_bin,m = df_bin.values, cols = df_bin.columns,rows = df_bin.index)
 
+    np.savez(args.output_frac,m = df_frac_clean, cols = df_frac_clean.columns,rows = df_frac_clean.index)
+
+    #df_frac_clean = df_frac
+
+    # needs to ensure S and _S have the same shape
 
 if __name__=="__main__":
     #parser
