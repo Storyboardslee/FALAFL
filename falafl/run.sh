@@ -17,7 +17,7 @@ swarm \
     --time 0-5:00:00 \
     --logdir log/ \
     --partition ccr,norm \
-    -g 100 \
-    -t 8 \
+    -g 60 \
+    -t 4 \
     --sbatch "--mail-type=END --mail-user=xli1994@umd.edu"
 
