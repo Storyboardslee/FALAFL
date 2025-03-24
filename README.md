@@ -41,7 +41,7 @@ Then:
 
 ```console
  $ git clone https://github.com/Storyboardslee/FALAFL.git
- $ cd Sgootr
+ $ cd FALAFL
 ```
 
 
