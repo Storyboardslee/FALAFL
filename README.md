@@ -13,11 +13,12 @@ Welcome to the repository for `FALAFL`, an algorithmic approach based on combina
   1. [Setting up](#start) 
  
   2. [Using `FALAFL`](#manual)
+     * [Parameters](#param)
      * [Files](#files) 
        * [Input](#input): content and format of input files to `FALAFL`
        * [Ouput](#output): content and format of output files to `FALAFL`
      * [Example](#example): a guide to perform feature selection on the colorectal cancer patient cohort [^1]
-  3. [Contact](#contact)
+  4. [Contact](#contact)
 
 
 
@@ -41,8 +42,10 @@ Then:
 
 We will describe the configurations and input files used by `FALAFL`, followed by an example to perform feature selection on the colorectal cancer patient cohort [^1].
 
-<a name="config"></a>
-## Configurations
+<a name="param"></a>
+## Parameters
+
+TBA
 
 <a name="files"></a>
 
