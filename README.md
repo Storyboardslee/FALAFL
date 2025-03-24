@@ -53,12 +53,16 @@ Here we will describe the content and format for input and output for `FALAFL`.
 <a name="input"></a>
 ### Input
 
+TBA
+
 
 <a name="output"></a>
 ### Output
-
+TBA
 <a name="example"></a>
 ## Example
+TBA
+
 
 <a name="contact"></a>
 # Contact
