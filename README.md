@@ -19,9 +19,6 @@ Welcome to the repository for `FALAFL`, an algorithmic approach based on combina
      * [Example](#example): a guide to perform feature selection on the colorectal cancer patient cohort [^1]
   3. [Contact](#contact)
 
-# Getting Started
-
-## Setting up
 
 
 <a name="start"></a>
