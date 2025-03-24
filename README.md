@@ -22,7 +22,7 @@ Welcome to the repository for `FALAFL`, an algorithmic approach based on combina
 
 
 <a name="start"></a>
-# Getting Started
+# Setting up
 
 Follow instructions to [install `conda`](https://conda.io/projects/conda/en/latest/user-guide/install/).
 
