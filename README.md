@@ -5,18 +5,17 @@ FALAFL: FAir muLti-sAmple Feature sELection. Applicable to comparative analysis 
 
 Welcome to the repository for `FALAFL`, an algorithmic approach based on combinatorial optimization and designed to perform feature selection in sequencing data which ensures a balanced selection of features from all patient samples in a cohort.
 
-![Schema Figure for Sgootr](/assets/falafl_sysarch.pdf)
+![Schema Figure for FALAFL](/assets/falafl_sysarch.pdf)
 
 
 # Table of Contents
 
-  1. [Getting Started](#start) 
-     * [Setting Up](#setup): how to download the required tools and programs
-
+  1. [Setting up](#start) 
+ 
   2. [Using `FALAFL`](#manual)
      * [Files](#files) 
        * [Input](#input): content and format of input files to `FALAFL`
-       * [Ouput](#output): content and format of output files to `Sgootr`
+       * [Ouput](#output): content and format of output files to `FALAFL`
      * [Example](#example): a guide to perform feature selection on the colorectal cancer patient cohort [^1]
   3. [Contact](#contact)
 
@@ -27,11 +26,6 @@ Welcome to the repository for `FALAFL`, an algorithmic approach based on combina
 
 <a name="start"></a>
 # Getting Started
-
-To help you get started with using `Sgootr`, we will first describe how to set up the required tools and programs, then lead you through an example that reproduces our main result on metastatic colorectal cancer patient CRC01 [^1].
-
-<a name="setup"></a>
-## Setting Up
 
 Follow instructions to [install `conda`](https://conda.io/projects/conda/en/latest/user-guide/install/).
 
