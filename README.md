@@ -5,7 +5,7 @@ FALAFL: FAir muLti-sAmple Feature sELection. Applicable to comparative analysis 
 
 Welcome to the repository for `FALAFL`, an algorithmic approach based on combinatorial optimization and designed to perform feature selection in sequencing data which ensures a balanced selection of features from all patient samples in a cohort.
 
-![Schema Figure for FALAFL](/assets/falafl_sysarch.pdf)
+![Schema Figure for FALAFL](/assets/falafl_sysarch.png)
 
 
 # Table of Contents
