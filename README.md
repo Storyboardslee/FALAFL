@@ -40,12 +40,14 @@ Then:
 <a name="manual"></a>
 # Using `FALAFL`
 
-We will describe the configurations and input files used by `FALAFL`, followed by an example to perform feature selection on the colorectal cancer patient cohort [^1].
+We will describe the parameters, input files, and output files used by `FALAFL`, followed by an example to perform feature selection on the colorectal cancer patient cohort [^1].
 
 <a name="param"></a>
 ## Parameters
 
-TBA
+`FALAFL` has one optional and three required parameters. They are:
+$\delta$, $p$, $k$, and $q$.
+
 
 <a name="files"></a>
 
