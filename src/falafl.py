@@ -6,7 +6,7 @@ import gurobipy as gp, numpy as np, math
 import sys, os, argparse
 
 
-def falafel(_S,S,q,c,t):
+def falafel(S,q,c,t):
     n,m = S.shape
     
 
@@ -27,7 +27,7 @@ def falafel(_S,S,q,c,t):
       
 
     # set objective
-    model.setObjective(gp.quicksum(R[j]* _S[i,j] for j in range(m) for i in range(n)), gp.GRB.MAXIMIZE)
+    model.setObjective(gp.quicksum(R[j]* S[i,j] for j in range(m) for i in range(n)), gp.GRB.MAXIMIZE)
 
     model.optimize()
 
@@ -37,8 +37,7 @@ def falafel(_S,S,q,c,t):
 
 def get_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-ib', '--input_binary', type=str, required=True)
-    parser.add_argument('-if', '--input_fraction', type=str, required=True)
+    parser.add_argument('-i', '--input_binary', type=str, required=True)
     parser.add_argument('-o', '--output', type=str, required=True)
     parser.add_argument('-q', '--q', type=float, required=True)
     parser.add_argument('-c', '--threads', type=int, required=True)
@@ -51,10 +50,9 @@ def main():
     assert args.q <= 1
 
     S = np.load(args.input_binary, allow_pickle=True)['m']
-    _S = np.load(args.input_fraction, allow_pickle=True)['m']
 
-   # run falafel
-    R_chosen = falafel(_S, S,args.q,args.threads, args.run_time)
+   # run falafl
+    R_chosen = falafel(S,args.q,args.threads, args.run_time)
     np.savez(args.output,  cols=R_chosen )
     print(len(R_chosen))
     print(S.shape[1])
