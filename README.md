@@ -17,7 +17,7 @@ Welcome to the repository for `FALAFL`[^2], an algorithmic approach based on com
      * [Files](#files) 
        * [Input](#input): content and format of input files to `FALAFL`
        * [Intermediate output](#inter_output): content and format of intermediate output of `FALAFL`
-       * [Final Ouput](#final_output): content and format of final output files to `FALAFL`
+       * [Final output](#final_output): content and format of final output files to `FALAFL`
      * [Example](#example): a guide to perform feature selection on the colorectal cancer patient cohort [^1]
   4. [Contact](#contact)
 
