@@ -50,7 +50,7 @@ We will describe the parameters, input files, and output files used by `FALAFL`,
 
  | **Parameter** | **Description** |
  |---------------|----------------|
- |     $\delta$  |  Optional, the minimum coverage threshold for a feature to be included in the analysis. For each patient $i$, we have $s_{i,j} > \delta $ for each site $j$; if not, site $j$ is not considered any further for that patient.|
+ |     $\delta$  |  Optional, the minimum coverage threshold for a feature to be included in the analysis. For each patient $i$, we have $s_{i,j} > \delta$ for each site $j$; if not, site $j$ is not considered any further for that patient.|
  |     $p$        | The threshold for binarization of $S$ to obtain $\overline{S}$, where $\overline{s}_{i,j}$ indicates whether site $j$ has sufficient read depth in at least a fraction of $p$ cells in patient $i$. |
  |     $k$        |  The threshold for keeping sites in $\overline{S}$. We eliminate all sites $j$ where the total number of patients $i$ with $s_{i,j} =1$ is $\leq k$. |
   |    $q$        |  The proportion of sites chosen in each patient. `FALAFL` chooses the largest subset of sites $s_j$, so that for each patient $i$, the proportion of $\overline{s}_{i,j}=1$ among the chosen sites is at least $q$.          |
@@ -66,7 +66,7 @@ Here we will describe the content and format for input and output for `FALAFL`.
 <a name="input"></a>
 ### Input
 
-The input to `FALAFL` is a patient-by-site matrix $S_{n\times m}$, where $n$ is the number of patients, $m$ the number of CpG sites (or any other molecular features the user wish to study), and $s_{i,j}$ the fraction of cells in patient (i.e., tumor sample) $i$ in which CpG site $j$ has ``sufficient'' read depth (e.g.,two reads or more) as defined by the user. We choose to implement in a way such that the program takes (`.npz` file)[https://numpy.org/doc/2.2/user/how-to-io.html] as input, in which the matrix is stored in the filed `\'m\'` in the file.
+The input to `FALAFL` is a patient-by-site matrix $S_{n\times m}$, where $n$ is the number of patients, $m$ the number of CpG sites (or any other molecular features the user wish to study), and $s_{i,j}$ the fraction of cells in patient (i.e., tumor sample) $i$ in which CpG site $j$ has ``sufficient'' read depth (e.g.,two reads or more) as defined by the user. We choose to implement in a way such that the program takes (`.npz` file)[https://numpy.org/doc/2.2/user/how-to-io.html] as input, in which the matrix is stored in the filed `m` in the file.
 
 ### Intermediate output
 The preprocessing step (as excuted in `src/preprocess.py`) of `FALAFL` takes care of filtering for sites satisfying $s_{i,j} > \delta $, binarizing $S$ to obtain $\overline{S}$, where $\overline{s}_{i,j}$ indicates whether site $j$ has sufficient read depth in at least a fraction of $p$ cells in patient $i$, and filtering for sites with good coverage in at least $k$ patients. The 
