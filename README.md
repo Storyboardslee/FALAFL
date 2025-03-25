@@ -3,7 +3,7 @@ FALAFL: FAir muLti-sAmple Feature sELection. Applicable to comparative analysis 
 
 
 
-Welcome to the repository for `FALAFL`, an algorithmic approach based on combinatorial optimization and designed to perform feature selection in sequencing data which ensures a balanced selection of features from all patient samples in a cohort.
+Welcome to the repository for `FALAFL`[^2], an algorithmic approach based on combinatorial optimization and designed to perform feature selection in sequencing data which ensures a balanced selection of features from all patient samples in a cohort.
 
 ![Schema Figure for FALAFL](/assets/falafl_sysarch.png)
 
@@ -48,6 +48,14 @@ We will describe the parameters, input files, and output files used by `FALAFL`,
 `FALAFL` has one optional and three required parameters. They are:
 $\delta$, $p$, $k$, and $q$.
 
+  **Parameter** | **Description**
+ ---------------|----------------
+      $\delta$  |  
+      $p$        |
+      $k$        |
+      $q$        |
+
+
 
 <a name="files"></a>
 
@@ -77,6 +85,8 @@ We are glad you are using `FALAFL` and look forward to hearing your own creative
 <!-- References -->
 
 [^1]: Bian, S., Hou, Y., Zhou, X., Li, X., Yong, J., Wang, Y., Wang, W., Yan, J., Hu, B., Guo, H., Wang, J.,
-Gao, S., Mao, Y., Dong, J., Zhu, P., Xiu, D., Yan, L., Wen, L., Qiao, J., Tang, F., Fu, W.: Single-cell multiomics sequencing and analyses of human colorectal cancer. Science **362**(6418), 1060-1063 (Nov 2018). [https://doi.org/10.1126/science.aao3791](https://doi.org/10.1126/science.aao3791)
+Gao, S., Mao, Y., Dong, J., Zhu, P., Xiu, D., Yan, L., Wen, L., Qiao, J., Tang, F., Fu, W.: Single-cell multiomics sequencing and analyses of human colorectal cancer. Science **362**(6418), 1060-1063 (Nov 2018). [https://doi.org/10.1126/science.aao3791](https://doi.org/10.1126/science.aao3791) (This URL will be updated soon.)
+
+[^2]: Li, X. C., Liu, Y., Sch\"affer, A. A., Mount, S. M., Sahinalp, S. C.: Fair molecular feature selection unveils universally tumor lineage-informative methylation sites in colorectal cancer. [bioRxiv 2024.02.22.580595. [https://doi.org/10.1101/2024.02.22.580595](https://doi.org/10.1101/2024.02.22.580595)
 
 
