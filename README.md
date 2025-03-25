@@ -71,7 +71,7 @@ The input to `FALAFL` is a patient-by-site matrix $S_{n\times m}$, where $n$ is 
 <a name="inter_output"></a>
 ### Intermediate output
 
-The preprocessing step (as excuted in `src/preprocess.py`) of `FALAFL` takes care of the following steps:
+The preprocessing step (as executed in `src/preprocess.py`) of `FALAFL` takes care of the following steps:
 1. Filtering for sites satisfying $s_{i,j} >\delta$.
 2. Binarizing $S$ to obtain $\overline{S}$, where $\overline{s}_{i,j}$ indicates whether site $j$ has sufficient read depth in at least a fraction of $p$ cells in patient $i$
 3. Filtering for sites with good coverage in at least $k$ patients.
@@ -87,7 +87,17 @@ The final output of `FALAFL` is the indices of the sites selected by ILP (as exc
 <a name="example"></a>
 ## Example
 
-We include an example of running the entire `FALAFL` pipeline (preprocessing and ILP-based feature selection) in `demo.ipynb` using the colorectal cancer data in `demo_data`.
+Here we are giving example of running the entire `FALAFL` pipeline (preprocessing and ILP-based feature selection) in using the colorectal cancer data as input (`demo_data/input.npz`). For the sake of data size, the input file we are using for this demo have already been filtered with the threshold $\delta=0.1$, so the example below will skip the optional first step in preprocessing. In this demo, we are setting the parameters as the following: $p=0.5, k=2, q=0.75$. As of now, the entire pipeline needs be executed in a stepwise manner.
+
+1. For the preprocessing step, execute the following:
+```
+python preprocess.py \
+  -i input.npz \
+  -o _S.npz \
+  -p 0.5 \
+  -k 2 \
+
+```
 
 
 
