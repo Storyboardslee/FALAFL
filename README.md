@@ -80,7 +80,7 @@ This step outputs $\overline{S}_{n,m'}$, where $m'$ denotes the number of sites 
 
 
 <a name="final_output"></a>
-### Final Output
+### Final output
 The final output of `FALAFL` is the indices of the sites selected by ILP (as excuted in `src/falafl.py`). The output is an `.npz` file, in which the indices of the selected sites are stored in the field `cols` in the file.
 
 
