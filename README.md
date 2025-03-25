@@ -70,7 +70,8 @@ The input to `FALAFL` is a patient-by-site matrix $S_{n\times m}$, where $n$ is 
 
 <a name="inter_output"></a>
 ### Intermediate output
-The preprocessing step (as excuted in `src/preprocess.py`) of `FALAFL` takes care of filtering for sites satisfying $s_{i,j} > \delta $, binarizing $S$ to obtain $\overline{S}$, where $\overline{s}_{i,j}$ indicates whether site $j$ has sufficient read depth in at least a fraction of $p$ cells in patient $i$, and filtering for sites with good coverage in at least $k$ patients. This intermediate state outputs $\overline{S}_{n,m'}$ (where $m'$ denotes the number of sites not eliminated in the preprocessing steps) as an `.npz` file, in which $\overline{S}_{n,m'}$ is stored in the field `m` in the file.
+
+The preprocessing step (as excuted in `src/preprocess.py`) of `FALAFL` takes care of filtering for sites satisfying $s_{i,j} >\delta$, binarizing $S$ to obtain $\overline{S}$, where $\overline{s}_{i,j}$ indicates whether site $j$ has sufficient read depth in at least a fraction of $p$ cells in patient $i$, and filtering for sites with good coverage in at least $k$ patients. This intermediate state outputs $\overline{S}_{n,m'}$ (where $m'$ denotes the number of sites not eliminated in the preprocessing steps) as an `.npz` file, in which $\overline{S}_{n,m'}$ is stored in the field `m` in the file.
 
 
 <a name="final_output"></a>
