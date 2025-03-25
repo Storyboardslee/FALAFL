@@ -6,7 +6,7 @@ import gurobipy as gp, numpy as np, math
 import sys, os, argparse
 
 
-def falafel(S,q,c,t):
+def falafl(S,q,c,t):
     n,m = S.shape
     
 
@@ -52,7 +52,7 @@ def main():
     S = np.load(args.input_binary, allow_pickle=True)['m']
 
    # run falafl
-    R_chosen = falafel(S,args.q,args.threads, args.run_time)
+    R_chosen = falafl(S,args.q,args.threads, args.run_time)
     np.savez(args.output,  cols=R_chosen )
     print(len(R_chosen))
     print(S.shape[1])
