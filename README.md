@@ -50,10 +50,10 @@ $\delta$, $p$, $k$, and $q$.
 
   **Parameter** | **Description**
  ---------------|----------------
-      $\delta$  |  
-      $p$        |
-      $k$        |
-      $q$        |
+      $\delta$  |  TBA
+      $p$        | TBA
+      $k$        | TBA
+      $q$        | TBA
 
 
 
