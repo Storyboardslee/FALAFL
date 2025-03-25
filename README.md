@@ -76,7 +76,7 @@ The preprocessing step (as excuted in `src/preprocess.py`) of `FALAFL` takes car
 2. Binarizing $S$ to obtain $\overline{S}$, where $\overline{s}_{i,j}$ indicates whether site $j$ has sufficient read depth in at least a fraction of $p$ cells in patient $i$
 3. Filtering for sites with good coverage in at least $k$ patients.
 
-This step outputs $\overline{S}_{n,m'}$ (where $m'$ denotes the number of sites not eliminated in the preprocessing steps) as an `.npz` file, in which $\overline{S}_{n,m'}$ is stored in the field `m` in the file.
+This step outputs $\overline{S}_{n,m'}$, where $m'$ denotes the number of sites not eliminated in the preprocessing step. The output is saved as an `.npz` file and stored in the field `m`.
 
 
 <a name="final_output"></a>
