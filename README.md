@@ -93,8 +93,8 @@ Note: as of now, the entire pipeline needs be executed in a stepwise manner. Thi
 
 1. For the preprocessing step, execute the following:
 ```
-python preprocess.py \
-  -i input.npz \
+python src/preprocess.py \
+  -i demo_data/input.npz \
   -o _S.npz \
   -p 0.5 \
   -k 2 \
@@ -104,7 +104,7 @@ After getting the output `_S.npz`, execute the step 2.
 
 2. For the ILP-based feature selection, execute the following:
 ```
-python falafl.py \
+python src/falafl.py \
   -i _S.npz \
   -o output.npnz \
   -q 0.75 \
