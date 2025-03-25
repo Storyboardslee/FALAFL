@@ -16,6 +16,8 @@ Welcome to the repository for `FALAFL`[^2], an algorithmic approach based on com
      * [Parameters](#param)
      * [Files](#files) 
        * [Input](#input): content and format of input files to `FALAFL`
+      
+         The input to `FALAFL` is a matrix of 
        * [Ouput](#output): content and format of output files to `FALAFL`
      * [Example](#example): a guide to perform feature selection on the colorectal cancer patient cohort [^1]
   4. [Contact](#contact)
@@ -45,15 +47,14 @@ We will describe the parameters, input files, and output files used by `FALAFL`,
 <a name="param"></a>
 ## Parameters
 
-`FALAFL` has one optional and three required parameters. They are:
-$\delta$, $p$, $k$, and $q$.
+`FALAFL` has one optional and three required parameters. Given a methylation read coverage data represented as a patient-by-site matrix $S_{n\times m}$, where $n$ is the number of patients, $m$ the number of CpG sites, and $s_{i,j}$ the fraction of cells in patient (i.e., tumor sample) $i$ in which CpG site $j$ has ``sufficient'' read depth (e.g.,two reads or more) as defined by the user, $\delta$, $p$, $k$, and $q$ are the following:
 
  | **Parameter** | **Description** |
  |---------------|----------------|
- |     $\delta$  |  TBA           |
- |     $p$        | TBA           |
- |     $k$        | TBA           |
-  |    $q$        | TBA         |
+ |     $\delta$  |  Optional, the minimum coverage threshold for a feature to be included in the analysis. For each patient $i$, we have $s_{i,j} > \delta $ for each site $j$; if not, site $j$ is not considered any further for that patient.|
+ |     $p$        | The threshold for binarization of $S$ tp $\overline{S}$. where $\overline{s}_{i,j}$ indicates whether site $j$ has sufficient read depth in at least a fraction of $p$ cells in patient $i$. |
+ |     $k$        |  The threshold for keeping sites in $\overline{S}$. We eliminate all sites $j$ where the total number of patients $i$ with $s_{i,j} =1$ is $\leq k$. |
+  |    $q$        |  The proportion of sites chosen in each patient. `FALAFL` chooses the largest subset of sites $s_j$, so that for each patient $i$, the proportion of $\overline{s}_{i,j}=1$ among the chosen sites is at least $q$.          |
 
 
 
