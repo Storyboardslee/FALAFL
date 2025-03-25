@@ -48,12 +48,12 @@ We will describe the parameters, input files, and output files used by `FALAFL`,
 `FALAFL` has one optional and three required parameters. They are:
 $\delta$, $p$, $k$, and $q$.
 
-  **Parameter** | **Description**
- ---------------|----------------
-      $\delta$  |  TBA
-      $p$        | TBA
-      $k$        | TBA
-      $q$        | TBA
+ | **Parameter** | **Description** |
+ |---------------|----------------|
+ |     $\delta$  |  TBA           |
+ |     $p$        | TBA           |
+ |     $k$        | TBA           |
+  |    $q$        | TBA         |
 
 
 
