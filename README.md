@@ -50,7 +50,7 @@ We will describe the parameters, input files, and output files used by `FALAFL`,
 
  | **Parameter** | **Description** |
  |---------------|----------------|
- |     $\delta$  |  Optional, the minimum coverage threshold for a feature to be included in the analysis. For each patient $i$, we have $s_{i,j} > \delta$ for each site $j$; if not, site $j$ is not considered any further for that patient.|
+ |     $\delta$  |  The minimum coverage threshold for a feature to be included in the analysis. For each patient $i$, we have $s_{i,j} > \delta$ for each site $j$; if not, site $j$ is not considered any further for that patient. The use of $\delta$ is optional. |
  |     $p$        | The threshold for binarization of $S$ to obtain $\overline{S}$, where $\overline{s}_{i,j}$ indicates whether site $j$ has sufficient read depth in at least a fraction of $p$ cells in patient $i$. |
  |     $k$        |  The threshold for keeping sites in $\overline{S}$. We eliminate all sites $j$ where the total number of patients $i$ with $s_{i,j} =1$ is $\leq k$. |
   |    $q$        |  The proportion of sites chosen in each patient. `FALAFL` chooses the largest subset of sites $s_j$, so that for each patient $i$, the proportion of $\overline{s}_{i,j}=1$ among the chosen sites is at least $q$.          |
