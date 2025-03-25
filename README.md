@@ -89,7 +89,7 @@ The final output of `FALAFL` is the indices of the sites selected by ILP (as exc
 
 Here we are giving example of running the entire `FALAFL` pipeline (preprocessing and ILP-based feature selection) in using the colorectal cancer data as input (`demo_data/input.npz`). For the sake of data size, the input file we are using for this demo have already been filtered with the threshold $\delta=0.1$, so the example below will skip the optional first step in preprocessing. In this demo, we are setting the parameters as the following: $p=0.5, k=2, q=0.75$. 
 
-_Note:_ as of now, the entire pipeline needs be executed in a stepwise manner. This will be updated to a `snakemake` pipeline in the near future.
+_Note to users: as of now, the entire pipeline needs be executed in a stepwise manner. This will be updated to a `snakemake` pipeline in the near future._
 
 1. For the preprocessing step, execute the following:
 ```
@@ -100,7 +100,7 @@ python src/preprocess.py \
   -k 2 \
 
 ```
-After getting the output `_S.npz`, execute the step 2.
+After getting the output `_S.npz`, execute step 2.
 
 2. For the ILP-based feature selection, execute the following:
 ```
