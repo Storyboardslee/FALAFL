@@ -81,6 +81,8 @@ The final output of `FALAFL` is the indices of the sites selected by ILP (as exc
 <a name="example"></a>
 ## Example
 
+We include an example of running the entire `FALAFL` pipeline (preprocessing and ILP-based feature selection) in `demo.ipynb` using the colorectal cancer data in `demo_data`.
+
 
 
 <a name="contact"></a>
