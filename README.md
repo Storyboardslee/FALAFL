@@ -89,8 +89,8 @@ We are glad you are using `FALAFL` and look forward to hearing your own creative
 <!-- References -->
 
 [^1]: Bian, S., Hou, Y., Zhou, X., Li, X., Yong, J., Wang, Y., Wang, W., Yan, J., Hu, B., Guo, H., Wang, J.,
-Gao, S., Mao, Y., Dong, J., Zhu, P., Xiu, D., Yan, L., Wen, L., Qiao, J., Tang, F., Fu, W.: Single-cell multiomics sequencing and analyses of human colorectal cancer. Science **362**(6418), 1060-1063 (Nov 2018). [https://doi.org/10.1126/science.aao3791](https://doi.org/10.1126/science.aao3791) (This URL will be updated soon.)
+Gao, S., Mao, Y., Dong, J., Zhu, P., Xiu, D., Yan, L., Wen, L., Qiao, J., Tang, F., Fu, W.: Single-cell multiomics sequencing and analyses of human colorectal cancer. Science **362**(6418), 1060-1063 (Nov 2018). [https://doi.org/10.1126/science.aao3791](https://doi.org/10.1126/science.aao3791) 
 
-[^2]: Li, X. C., Liu, Y., Sch\"affer, A. A., Mount, S. M., Sahinalp, S. C.: Fair molecular feature selection unveils universally tumor lineage-informative methylation sites in colorectal cancer. [bioRxiv 2024.02.22.580595. [https://doi.org/10.1101/2024.02.22.580595](https://doi.org/10.1101/2024.02.22.580595)
+[^2]: Li, X. C., Liu, Y., Sch\"affer, A. A., Mount, S. M., Sahinalp, S. C.: Fair molecular feature selection unveils universally tumor lineage-informative methylation sites in colorectal cancer. bioRxiv 2024.02.22.580595. [https://doi.org/10.1101/2024.02.22.580595](https://doi.org/10.1101/2024.02.22.580595) (This URL will be updated soon.)
 
 
