@@ -47,7 +47,7 @@ We will describe the parameters, input files, and output files used by `FALAFL`,
 <a name="param"></a>
 ## Parameters
 
-`FALAFL` has one optional and three required parameters. Given a methylation read coverage data represented as a patient-by-site matrix $S_{n\times m}$, where $n$ is the number of patients, $m$ the number of CpG sites, and $s_{i,j}$ the fraction of cells in patient (i.e., tumor sample) $i$ in which CpG site $j$ has ``sufficient'' read depth (e.g.,two reads or more) as defined by the user, $\delta$, $p$, $k$, and $q$ are the following:
+`FALAFL` has one optional and three required parameters. Given a methylation read coverage data represented as a patient-by-site matrix $S_{n\times m}$, where $n$ is the number of patients, $m$ the number of CpG sites, and $s_{i,j}$ the fraction of cells in patient, the parameters $\delta$, $p$, $k$, and $q$ are the following:
 
  | **Parameter** | **Description** |
  |---------------|----------------|
@@ -67,7 +67,10 @@ Here we will describe the content and format for input and output for `FALAFL`.
 <a name="input"></a>
 ### Input
 
-TBA
+The input to `FALAFL` is a patient-by-site matrix $S_{n\times m}$, where $n$ is the number of patients, $m$ the number of CpG sites (or any other molecular features the user wish to study), and $s_{i,j}$ the fraction of cells in patient (i.e., tumor sample) $i$ in which CpG site $j$ has ``sufficient'' read depth (e.g.,two reads or more) as defined by the user. 
+
+### Intermediate files
+The preprocessing step of `FALAFL` 
 
 
 <a name="output"></a>
