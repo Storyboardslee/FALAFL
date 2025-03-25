@@ -66,18 +66,20 @@ Here we will describe the content and format for input and output for `FALAFL`.
 <a name="input"></a>
 ### Input
 
-The input to `FALAFL` is a patient-by-site matrix $S_{n\times m}$, where $n$ is the number of patients, $m$ the number of CpG sites (or any other molecular features the user wish to study), and $s_{i,j}$ the fraction of cells in patient (i.e., tumor sample) $i$ in which CpG site $j$ has "sufficient" read depth (e.g.,two reads or more) as defined by the user. We choose to implement in a way such that the program takes [`.npz` file](https://numpy.org/doc/2.2/reference/generated/numpy.savez.html#numpy.savez) as input, in which the matrix is stored in the filed `m` in the file.
+The input to `FALAFL` is a patient-by-site matrix $S_{n\times m}$, where $n$ is the number of patients, $m$ the number of CpG sites (or any other molecular features the user wish to study), and $s_{i,j}$ the fraction of cells in patient (i.e., tumor sample) $i$ in which CpG site $j$ has "sufficient" read depth (e.g.,two reads or more) as defined by the user. We choose to implement in a way such that the program takes [`.npz` file](https://numpy.org/doc/2.2/reference/generated/numpy.savez.html#numpy.savez) as input, in which the input matrix $S_{n\times m}$ is stored in the field `m` in the file.
 
 ### Intermediate output
-The preprocessing step (as excuted in `src/preprocess.py`) of `FALAFL` takes care of filtering for sites satisfying $s_{i,j} > \delta $, binarizing $S$ to obtain $\overline{S}$, where $\overline{s}_{i,j}$ indicates whether site $j$ has sufficient read depth in at least a fraction of $p$ cells in patient $i$, and filtering for sites with good coverage in at least $k$ patients. The 
+The preprocessing step (as excuted in `src/preprocess.py`) of `FALAFL` takes care of filtering for sites satisfying $s_{i,j} > \delta $, binarizing $S$ to obtain $\overline{S}$, where $\overline{s}_{i,j}$ indicates whether site $j$ has sufficient read depth in at least a fraction of $p$ cells in patient $i$, and filtering for sites with good coverage in at least $k$ patients. This intermediate state outputs $\overline{S}_{n,m'}$ (where $m'$ denotes the number of sites not eliminated in the preprocessing steps) as an `.npz` file, in which $\overline{S}_{n,m'}$ is stored in the field `m` in the file.
 
 
 <a name="output"></a>
 ### Final Output
-TBA
+The final output of `FALAFL` is the indices of the sites selected by ILP (as excuted in `src/falafl.py`). The output is an `.npz` file, in which the indices of the selected sites are stored in the field `cols` in the file.
+
+
 <a name="example"></a>
 ## Example
-TBA
+
 
 
 <a name="contact"></a>
