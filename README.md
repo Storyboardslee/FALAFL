@@ -112,7 +112,7 @@ The output file `output.npz` contains the indices of the sites selected by `FALA
 <a name="contact"></a>
 # Contact
 
-We are glad you are using `FALAFL` and look forward to hearing your own creative way of applying `FALAFL` on your data! If you have encountered any issues with `FALAFL`, please report on the [issue forum](https://github.com/Storyboardslee/FALAFL/issues) or contact Xuan Cindy Li [[email]](xli1994@umd.edu). 
+We are glad you choose to use `FALAFL`, and we look forward to hearing about your own creative way of applying `FALAFL` on your data! If you have encountered any issues with `FALAFL`, please report on the [issue forum](https://github.com/Storyboardslee/FALAFL/issues) or contact Xuan Cindy Li [[email]](xli1994@umd.edu). 
 
 <!-- References -->
 
