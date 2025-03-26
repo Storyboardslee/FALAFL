@@ -1,7 +1,5 @@
-# FALAFL
-FALAFL: FAir muLti-sAmple Feature sELection. Applicable to comparative analysis of multi-patient data.
-
-
+# `FALAFL`
+`FALAFL`: FAir muLti-sAmple Feature sELection.
 
 Welcome to the repository for `FALAFL`[^2], an algorithmic approach based on combinatorial optimization and designed to perform feature selection in sequencing data which ensures a balanced selection of features from all patient samples in a cohort.
 
