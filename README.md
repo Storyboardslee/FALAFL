@@ -110,7 +110,7 @@ python src/falafl.py \
   -q 0.75 \
 ```
 
-The output file `output.npz` contains the indices of the sites selected by `FALAFL` and can then be used for downstream analysis per the user's research purpose.
+The output file `output.npz` contains the indices of the sites selected by `FALAFL` and can be used for downstream analysis per the user's research purpose.
 
 <a name="contact"></a>
 # Contact
