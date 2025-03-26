@@ -84,7 +84,7 @@ The final output of `FALAFL` is the indices of the sites selected by ILP (as exc
 <a name="example"></a>
 ## Example
 
-Here we are giving example of running the entire `FALAFL` pipeline (preprocessing and ILP-based feature selection) in using the colorectal cancer data as input (`demo_data/input.npz`). For the sake of data size, the input file we are using for this demo have already been filtered with the threshold $\delta=0.1$, so the example below will skip the optional first step in preprocessing. In this demo, we are setting the parameters as the following: $p=0.5, k=2, q=0.75$. 
+Here we are giving example of running the entire `FALAFL` pipeline (preprocessing and ILP-based feature selection) in using the colorectal cancer data as input (`demo_data/input.npz`). For the sake of data size, the input file we are using for this demo have already been filtered with the threshold $\delta=0.1$, so the example below will skip the optional first step in preprocessing. In this demo, we are setting the parameters as the following: $p=0.5, k=2, q=0.75$. You are most certainly welcomed to change the choice for $p$, $k$, and $q$ based on your expectation for the density of the output matrix!
 
 _Note to users: as of now, the entire pipeline needs be executed in a stepwise manner. This will be updated to a `snakemake` pipeline in the near future._
 
