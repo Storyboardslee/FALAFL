@@ -84,25 +84,26 @@ The final output of `FALAFL` is the indices of the sites selected by ILP (as exc
 <a name="example"></a>
 ## Example
 
-Here we are giving example of running the entire `FALAFL` pipeline (preprocessing and ILP-based feature selection) in using the colorectal cancer data as input (`demo_data/input.npz`). For the sake of data size, the input file we are using for this demo have already been filtered with the threshold $\delta=0.1$, so the example below will skip the optional first step in preprocessing. In this demo, we are setting the parameters as the following: $p=0.5, k=2, q=0.75$. You are most certainly welcomed to change the choice for $p$, $k$, and $q$ based on your expectation for the density of the output matrix!
+Here we are giving example of running `FALAFL` (preprocessing and ILP-based feature selection) on the randomly perturbed colorectal cancer data of 10 randomly selected patients as described in Section 3.1 of the `FALAFL` paper[^2]. Due to data size, we are only describing the command line we use for the preprocessing step (step 1), and providing only the intermediate output file `demo_data\_S.npz`, which have already been filtered with the parameters set to $\delta=0.1$, $p=0.5$, and $k=4$ by `src/preprocess.py`. `demo_data\_S.npz` is the input for the ILP-based feature selection step (step 2), and we choose to set the parameter $q=0.75$. 
 
-_Note to users: as of now, the entire pipeline needs be executed in a stepwise manner. This will be updated to a `snakemake` pipeline in the near future._
+_Note to users: as of now, the entire pipeline needs be executed in a stepwise manner. This will be updated to a `snakemake` pipeline in the future._
 
 1. For the preprocessing step, execute the following:
 ```
 python src/preprocess.py \
-  -i demo_data/input.npz \
+  -i input.npz \
   -o _S.npz \
+  -d 0.1 \
   -p 0.5 \
-  -k 2 \
-
+  -k 4
+  
 ```
-After getting the output `_S.npz`, execute step 2.
+
 
 2. For the ILP-based feature selection, execute the following:
 ```
 python src/falafl.py \
-  -i _S.npz \
+  -i demo_data\_S.npz \
   -o output.npnz \
   -q 0.75 \
 ```
