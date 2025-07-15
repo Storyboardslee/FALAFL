@@ -1,4 +1,4 @@
-# Attention: This repo is stale!
+<span style="color:blue"># Attention: This repo is stale!</span>
 Please redirect to [Algorithms for cancer](https://github.com/algo-cancer/FALAFL) for the most up-to-date `FALAFL` code and tutorial. 
 
 
