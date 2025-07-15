@@ -1,4 +1,4 @@
-# \color{red}Attention: This repo is STALE}
+# $$\color{red}Attention: \space This \space repo \space is \space STALE}$$
 Please redirect to [Algorithms for cancer](https://github.com/algo-cancer/FALAFL) for the most up-to-date `FALAFL` code and tutorial. 
 
 
