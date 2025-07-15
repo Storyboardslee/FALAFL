@@ -1,5 +1,5 @@
 # $${\color{red}Attention: \space This \space repo \space is \space STALE!}$$
-Please redirect to [Algorithms for cancer](https://github.com/algo-cancer/FALAFL) for the most up-to-date `FALAFL` code and tutorial. 
+Please redirect to [Algorithms for Cancer Github](https://github.com/algo-cancer/FALAFL) for the most up-to-date `FALAFL` code and tutorial. 
 
 
 # `FALAFL`: FAir muLti-sAmple Feature sELection.
