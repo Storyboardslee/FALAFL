@@ -1,3 +1,7 @@
+# Attention: This repo is stale!
+Please redirect to [Algorithms for cancer](https://github.com/algo-cancer/FALAFL) for the most up-to-date `FALAFL` code and tutorial. 
+
+
 # `FALAFL`: FAir muLti-sAmple Feature sELection.
 
 Welcome to the repository for `FALAFL` (FAir muLti-sAmple Feature sELection)[^2], an algorithmic approach based on combinatorial optimization and designed to perform feature selection in sequencing data which ensures a balanced selection of features from all patient samples in a cohort.
